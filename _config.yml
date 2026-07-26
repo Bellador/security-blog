@@ -27,6 +27,17 @@ url: "https://bellador.github.io"
 github:
   username: bellador
 
+twitter:
+  username: # optional, leave empty if unused
+
+social:
+  name: Bellador
+  email: # optional — leave truly empty (not a placeholder string) if you don't want one shown
+  fediverse_handle: # optional
+  links:
+    - https://github.com/bellador
+
+
 # Site Verification Settings
 webmaster_verifications:
   google: # fill in your Google verification code
@@ -143,7 +154,7 @@ pwa:
 paginate: 10
 
 # The base URL of your site
-baseurl: ""
+baseurl: "/security-blog"
 
 # ------------ The following options are not recommended to be modified ------------------
 
