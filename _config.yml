@@ -124,12 +124,12 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: bellador/security-blog # set up via https://giscus.app after enabling Discussions on the repo
-    repo_id: # CHANGE ME - giscus.app will generate this after you enter your repo
+    repo_id: R_kgDOTj2oBw
     category: General # or create a "Comments" discussion category
-    category_id: # CHANGE ME - giscus.app will generate this
+    category_id: DIC_kwDOTj2oB84DCAAh
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
-    input_position: # optional, default to 'bottom'
+    input_position: top
     lang: # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
 
