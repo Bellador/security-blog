@@ -5,7 +5,7 @@ categories: [Social Engineering, Phishing]
 tags: [Attack Engineering]
 ---
 
-A while ago I stumbled over the voicemail e-mails sent out by <noreply@skype.voicemail.microsoft.com> as a result of a missed Microsoft Teams call when the caller left a voice message. I was intrigued and started playing around with the functionality, also because I couldn't find any related articles online talking about the feature from a cyber security perspective. I suspected some potential for phishing abuse since the e-mails emanated trust and appeared to be internally routed. Also the feature "Voicemail for inbound calls" and "Voicemail transcription" are enabled by default in the MS Teams admin center. The content in the message is a result of a voice transcription of whatever the caller left on voice mails and is thus user controlled.
+A while ago I stumbled over the voicemail e-mails sent out by **noreply@skype.voicemail.microsoft.com** as a result of a missed Microsoft Teams call when the caller left a voice message. I was intrigued and started playing around with the functionality, also because I couldn't find any related articles online talking about the feature from a cyber security perspective. I suspected some potential for phishing abuse since the e-mails emanated trust and appeared to be internally routed. Also the feature "Voicemail for inbound calls" and "Voicemail transcription" are enabled by default in the MS Teams admin center. The content in the message is a result of a voice transcription of whatever the caller left on voice mails and is thus user controlled.
 
 MS Teams phishing is nothing new. Threat actors have learned that many organizations have hardened their e-mail infrastructure and their phishing awareness of their users in regards to external e-mails. But far less so for collaboration tools such as MS Teams and others. For instance APT Cloaked Ursa used MS Team calls and chats before to social engineer users into confirming MFA prompts by initiating a chat interactions and impersonating IT Support personal (Source: https://unit42.paloaltonetworks.com/microsoft-teams-phishing/). 
 
@@ -50,7 +50,7 @@ To harden your environment and protect your users, the following measure can red
 ## TL;DR
 
 **In summary, these characteristics make the voicemails interesting for social engineering attacks:**
-- Voicecall notification e-mails have a trusted Microsoft sender address, namely <noreply@skype.voicemail.microsoft.com>
+- Voicecall notification e-mails have a trusted Microsoft sender address, namely **noreply@skype.voicemail.microsoft.com**
 - For most users these e-mails look like internal e-mails and treat them with more trust, despite the content being external controlled.
 - The e-mail content is not routed via the e-mail gateway and thus undergoes likely less security checks.
 - Transcribed URLs are properly parsed and even made clickable by Outlook Mobile.
