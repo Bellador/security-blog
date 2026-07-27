@@ -7,7 +7,7 @@ tags: [Attack Engineering]
 
 A while ago I stumbled over the voicemail e-mails sent out by <noreply@skype.voicemail.microsoft.com> as a result of a missed Microsoft Teams call when the caller left a voice message. I was intrigued and started playing around with the functionality, also because I couldn't find any related articles online talking about the feature from a cyber security perspective. I suspected some potential for phishing abuse since the e-mails emanated trust and appeared to be internally routed. Also the features "Voicemail for inbound calls" and "Voicemail transcription" are enabled by default in the MS Teams admin center. The content in the message is a result of a voice transcription of whatever the caller left on voicemail and is thus user controlled.
 
-MS Teams phishing is nothing new. Threat actors have learned that many organizations have hardened their e-mail infrastructure and their phishing awareness of their users in regard to external e-mails. But far less so for collaboration tools such as MS Teams and others. For instance, APT Cloaked Ursa previously used MS Team calls and chats to social engineer users into confirming MFA prompts by initiating chat interactions and impersonating IT Support personnel (Source: [https://unit42.paloaltonetworks.com/microsoft-teams-phishing/](https://unit42.paloaltonetworks.com/microsoft-teams-phishing/)). 
+MS Teams phishing is nothing new. Threat actors have learned that many organizations have hardened their e-mail infrastructure and their phishing awareness of their users in regard to external e-mails. But far less so for collaboration tools such as MS Teams and others. For instance, APT Cloaked Ursa previously used MS Team calls and chats to social engineer users into confirming MFA prompts by initiating chat interactions and impersonating IT Support personnel (Source: [https://unit42.paloaltonetworks.com/microsoft-teams-phishing/](https://unit42.paloaltonetworks.com/microsoft-teams-phishing/)). Even [fake MS Teams voicemail phishing](https://itnsgroup.com/threats/microsoft-teams-voicemail-phishing-2026-06-28) was observed - but why fake it if you can deliver the real deal?
 
 ## Why are these e-mails special?
 
@@ -43,7 +43,8 @@ This entire attack chain can of course be automated for scalability to deliver p
 
 To harden your environment and protect your users, the following measures can reduce the exposure:
 
-- Implement a reroute of the voicemail notification e-mails to your e-mail gateway to apply the same e-mail security scrutiny before forwarding them to the user's M365 mailbox. 
+- Likely the easiest and fastestest to mitigation: Implement a transport rule under Mail flow rules in the Exchange Online admin center which detects messages of type voicemail and pre-fixe a message on them to inform the user about the risks. Also, the known \[External\] tag can be supplied to the subject (Credit: [Ben Pyett - MS Techcommunity](https://techcommunity.microsoft.com/discussions/microsoftteams/voicemails-marked-as-external-messages---prevent-phishing-but-how/3298567)).
+- Implement a reroute of the voicemail notification e-mails to your e-mail gateway to apply the same e-mail security scrutiny before forwarding them to the user's M365 mailbox.
 - Change the calling policies for "Voicemail for inbound calls" and "Voicemail transcription" in your MS Teams admin center and potentially disable them outright. (Source: [https://learn.microsoft.com/en-us/answers/questions/2152889/where-is-the-setting-to-send-voicemails-as-an-email](https://learn.microsoft.com/en-us/answers/questions/2152889/where-is-the-setting-to-send-voicemails-as-an-email))
 - Check on Exchange Online what kind of content checks are enabled for "trusted" senders.
 
